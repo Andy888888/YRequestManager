@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80DB6CA21FD4354C007C1121 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CA11FD4354C007C1121 /* AppDelegate.m */; };
+		80DB6CA51FD4354C007C1121 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CA41FD4354C007C1121 /* ViewController.m */; };
+		80DB6CA81FD4354C007C1121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DB6CA61FD4354C007C1121 /* Main.storyboard */; };
+		80DB6CAA1FD4354C007C1121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80DB6CA91FD4354C007C1121 /* Assets.xcassets */; };
+		80DB6CAD1FD4354C007C1121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DB6CAB1FD4354C007C1121 /* LaunchScreen.storyboard */; };
+		80DB6CB01FD4354C007C1121 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CAF1FD4354C007C1121 /* main.m */; };
+		80DB6CBF1FD435EF007C1121 /* PokemonBaseDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CBC1FD435EF007C1121 /* PokemonBaseDo.m */; };
+		80DB6CC01FD435EF007C1121 /* PkPositionDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CBE1FD435EF007C1121 /* PkPositionDo.m */; };
+		80DB6CD21FD43620007C1121 /* InterceptorForRespSuc.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CC31FD4361F007C1121 /* InterceptorForRespSuc.m */; };
+		80DB6CD31FD43620007C1121 /* CentaResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CC41FD4361F007C1121 /* CentaResponse.m */; };
+		80DB6CD41FD43620007C1121 /* BaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CC61FD4361F007C1121 /* BaseApi.m */; };
+		80DB6CD51FD43620007C1121 /* BaseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CC81FD4361F007C1121 /* BaseServiceManager.m */; };
+		80DB6CD61FD43620007C1121 /* InterceptorForReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CCA1FD43620007C1121 /* InterceptorForReq.m */; };
+		80DB6CD71FD43620007C1121 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CCC1FD43620007C1121 /* RequestManager.m */; };
+		80DB6CD81FD43620007C1121 /* InterceptorForRespFail.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CCD1FD43620007C1121 /* InterceptorForRespFail.m */; };
+		80DB6CD91FD43620007C1121 /* AbsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CD11FD43620007C1121 /* AbsApi.m */; };
+		80DB6CE11FD43640007C1121 /* NetworkProtocalInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CDB1FD43640007C1121 /* NetworkProtocalInterceptor.m */; };
+		80DB6CE21FD43640007C1121 /* RespSucInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CDD1FD43640007C1121 /* RespSucInterceptor.m */; };
+		80DB6CE31FD43640007C1121 /* ReqLogInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CDF1FD43640007C1121 /* ReqLogInterceptor.m */; };
+		80DB6CE71FD4366F007C1121 /* DataConvertInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CE61FD4366F007C1121 /* DataConvertInterceptor.m */; };
+		80DB6CED1FD43697007C1121 /* PokemonPositionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CE91FD43696007C1121 /* PokemonPositionApi.m */; };
+		80DB6CEE1FD43697007C1121 /* PokemonBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CEC1FD43696007C1121 /* PokemonBaseApi.m */; };
+		CB10E9E3D3E4E985F62F53F1 /* libPods-YRequestManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51805ECDC220F939E58CAD98 /* libPods-YRequestManager.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1FFA70E7CC11753321C4CB52 /* Pods-YRequestManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YRequestManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YRequestManager/Pods-YRequestManager.debug.xcconfig"; sourceTree = "<group>"; };
+		46B47E1FA1DBD22097F1CFE7 /* Pods-YRequestManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YRequestManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-YRequestManager/Pods-YRequestManager.release.xcconfig"; sourceTree = "<group>"; };
+		51805ECDC220F939E58CAD98 /* libPods-YRequestManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YRequestManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DB6C9D1FD4354C007C1121 /* YRequestManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YRequestManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DB6CA01FD4354C007C1121 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		80DB6CA11FD4354C007C1121 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		80DB6CA31FD4354C007C1121 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		80DB6CA41FD4354C007C1121 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		80DB6CA71FD4354C007C1121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80DB6CA91FD4354C007C1121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80DB6CAC1FD4354C007C1121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80DB6CAE1FD4354C007C1121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80DB6CAF1FD4354C007C1121 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		80DB6CBB1FD435EF007C1121 /* PkPositionDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PkPositionDo.h; sourceTree = "<group>"; };
+		80DB6CBC1FD435EF007C1121 /* PokemonBaseDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonBaseDo.m; sourceTree = "<group>"; };
+		80DB6CBD1FD435EF007C1121 /* PokemonBaseDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonBaseDo.h; sourceTree = "<group>"; };
+		80DB6CBE1FD435EF007C1121 /* PkPositionDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PkPositionDo.m; sourceTree = "<group>"; };
+		80DB6CC11FD4361F007C1121 /* AbsApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsApi.h; sourceTree = "<group>"; };
+		80DB6CC21FD4361F007C1121 /* CentaResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentaResponse.h; sourceTree = "<group>"; };
+		80DB6CC31FD4361F007C1121 /* InterceptorForRespSuc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterceptorForRespSuc.m; sourceTree = "<group>"; };
+		80DB6CC41FD4361F007C1121 /* CentaResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CentaResponse.m; sourceTree = "<group>"; };
+		80DB6CC51FD4361F007C1121 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
+		80DB6CC61FD4361F007C1121 /* BaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseApi.m; sourceTree = "<group>"; };
+		80DB6CC71FD4361F007C1121 /* InterceptorForRespSuc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterceptorForRespSuc.h; sourceTree = "<group>"; };
+		80DB6CC81FD4361F007C1121 /* BaseServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseServiceManager.m; sourceTree = "<group>"; };
+		80DB6CC91FD4361F007C1121 /* BaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseApi.h; sourceTree = "<group>"; };
+		80DB6CCA1FD43620007C1121 /* InterceptorForReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterceptorForReq.m; sourceTree = "<group>"; };
+		80DB6CCB1FD43620007C1121 /* BaseServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseServiceManager.h; sourceTree = "<group>"; };
+		80DB6CCC1FD43620007C1121 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
+		80DB6CCD1FD43620007C1121 /* InterceptorForRespFail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterceptorForRespFail.m; sourceTree = "<group>"; };
+		80DB6CCE1FD43620007C1121 /* InterceptorForRespFail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterceptorForRespFail.h; sourceTree = "<group>"; };
+		80DB6CCF1FD43620007C1121 /* InterceptorForReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterceptorForReq.h; sourceTree = "<group>"; };
+		80DB6CD01FD43620007C1121 /* ApiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiDelegate.h; sourceTree = "<group>"; };
+		80DB6CD11FD43620007C1121 /* AbsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsApi.m; sourceTree = "<group>"; };
+		80DB6CDB1FD43640007C1121 /* NetworkProtocalInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkProtocalInterceptor.m; sourceTree = "<group>"; };
+		80DB6CDC1FD43640007C1121 /* NetworkProtocalInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkProtocalInterceptor.h; sourceTree = "<group>"; };
+		80DB6CDD1FD43640007C1121 /* RespSucInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespSucInterceptor.m; sourceTree = "<group>"; };
+		80DB6CDE1FD43640007C1121 /* RespSucInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespSucInterceptor.h; sourceTree = "<group>"; };
+		80DB6CDF1FD43640007C1121 /* ReqLogInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReqLogInterceptor.m; sourceTree = "<group>"; };
+		80DB6CE01FD43640007C1121 /* ReqLogInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReqLogInterceptor.h; sourceTree = "<group>"; };
+		80DB6CE51FD4366F007C1121 /* DataConvertInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataConvertInterceptor.h; sourceTree = "<group>"; };
+		80DB6CE61FD4366F007C1121 /* DataConvertInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataConvertInterceptor.m; sourceTree = "<group>"; };
+		80DB6CE91FD43696007C1121 /* PokemonPositionApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonPositionApi.m; sourceTree = "<group>"; };
+		80DB6CEA1FD43696007C1121 /* PokemonBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonBaseApi.h; sourceTree = "<group>"; };
+		80DB6CEB1FD43696007C1121 /* PokemonPositionApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonPositionApi.h; sourceTree = "<group>"; };
+		80DB6CEC1FD43696007C1121 /* PokemonBaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonBaseApi.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80DB6C9A1FD4354C007C1121 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB10E9E3D3E4E985F62F53F1 /* libPods-YRequestManager.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8028B60F18B5A1183D5C0D19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51805ECDC220F939E58CAD98 /* libPods-YRequestManager.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80DB6C941FD4354C007C1121 = {
+			isa = PBXGroup;
+			children = (
+				80DB6C9F1FD4354C007C1121 /* YRequestManager */,
+				80DB6C9E1FD4354C007C1121 /* Products */,
+				F5C8D448CEB5040D0C53A871 /* Pods */,
+				8028B60F18B5A1183D5C0D19 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		80DB6C9E1FD4354C007C1121 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6C9D1FD4354C007C1121 /* YRequestManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80DB6C9F1FD4354C007C1121 /* YRequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6CBA1FD435C8007C1121 /* Controller */,
+				80DB6CB91FD435B9007C1121 /* RequestManager */,
+				80DB6CB81FD435A8007C1121 /* Model */,
+				80DB6CB71FD4359A007C1121 /* Service */,
+				80DB6CA01FD4354C007C1121 /* AppDelegate.h */,
+				80DB6CA11FD4354C007C1121 /* AppDelegate.m */,
+				80DB6CAE1FD4354C007C1121 /* Info.plist */,
+				80DB6CA61FD4354C007C1121 /* Main.storyboard */,
+				80DB6CB61FD43564007C1121 /* Supporting Files */,
+			);
+			path = YRequestManager;
+			sourceTree = "<group>";
+		};
+		80DB6CB61FD43564007C1121 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6CA91FD4354C007C1121 /* Assets.xcassets */,
+				80DB6CAB1FD4354C007C1121 /* LaunchScreen.storyboard */,
+				80DB6CAF1FD4354C007C1121 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		80DB6CB71FD4359A007C1121 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6CE81FD4367B007C1121 /* Api */,
+				80DB6CE41FD43657007C1121 /* Interceptors */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		80DB6CB81FD435A8007C1121 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6CBB1FD435EF007C1121 /* PkPositionDo.h */,
+				80DB6CBE1FD435EF007C1121 /* PkPositionDo.m */,
+				80DB6CBD1FD435EF007C1121 /* PokemonBaseDo.h */,
+				80DB6CBC1FD435EF007C1121 /* PokemonBaseDo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80DB6CB91FD435B9007C1121 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6CDA1FD43629007C1121 /* Interceptor */,
+				80DB6CC11FD4361F007C1121 /* AbsApi.h */,
+				80DB6CD11FD43620007C1121 /* AbsApi.m */,
+				80DB6CD01FD43620007C1121 /* ApiDelegate.h */,
+				80DB6CC91FD4361F007C1121 /* BaseApi.h */,
+				80DB6CC61FD4361F007C1121 /* BaseApi.m */,
+				80DB6CCB1FD43620007C1121 /* BaseServiceManager.h */,
+				80DB6CC81FD4361F007C1121 /* BaseServiceManager.m */,
+				80DB6CC21FD4361F007C1121 /* CentaResponse.h */,
+				80DB6CC41FD4361F007C1121 /* CentaResponse.m */,
+				80DB6CCF1FD43620007C1121 /* InterceptorForReq.h */,
+				80DB6CCA1FD43620007C1121 /* InterceptorForReq.m */,
+				80DB6CCE1FD43620007C1121 /* InterceptorForRespFail.h */,
+				80DB6CCD1FD43620007C1121 /* InterceptorForRespFail.m */,
+				80DB6CC71FD4361F007C1121 /* InterceptorForRespSuc.h */,
+				80DB6CC31FD4361F007C1121 /* InterceptorForRespSuc.m */,
+				80DB6CC51FD4361F007C1121 /* RequestManager.h */,
+				80DB6CCC1FD43620007C1121 /* RequestManager.m */,
+			);
+			path = RequestManager;
+			sourceTree = "<group>";
+		};
+		80DB6CBA1FD435C8007C1121 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6CA31FD4354C007C1121 /* ViewController.h */,
+				80DB6CA41FD4354C007C1121 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		80DB6CDA1FD43629007C1121 /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6CDC1FD43640007C1121 /* NetworkProtocalInterceptor.h */,
+				80DB6CDB1FD43640007C1121 /* NetworkProtocalInterceptor.m */,
+				80DB6CE01FD43640007C1121 /* ReqLogInterceptor.h */,
+				80DB6CDF1FD43640007C1121 /* ReqLogInterceptor.m */,
+				80DB6CDE1FD43640007C1121 /* RespSucInterceptor.h */,
+				80DB6CDD1FD43640007C1121 /* RespSucInterceptor.m */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		80DB6CE41FD43657007C1121 /* Interceptors */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6CE51FD4366F007C1121 /* DataConvertInterceptor.h */,
+				80DB6CE61FD4366F007C1121 /* DataConvertInterceptor.m */,
+			);
+			path = Interceptors;
+			sourceTree = "<group>";
+		};
+		80DB6CE81FD4367B007C1121 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				80DB6CEA1FD43696007C1121 /* PokemonBaseApi.h */,
+				80DB6CEC1FD43696007C1121 /* PokemonBaseApi.m */,
+				80DB6CEB1FD43696007C1121 /* PokemonPositionApi.h */,
+				80DB6CE91FD43696007C1121 /* PokemonPositionApi.m */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		F5C8D448CEB5040D0C53A871 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FFA70E7CC11753321C4CB52 /* Pods-YRequestManager.debug.xcconfig */,
+				46B47E1FA1DBD22097F1CFE7 /* Pods-YRequestManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80DB6C9C1FD4354C007C1121 /* YRequestManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80DB6CB31FD4354C007C1121 /* Build configuration list for PBXNativeTarget "YRequestManager" */;
+			buildPhases = (
+				0025ECF62BE796FBD215764E /* [CP] Check Pods Manifest.lock */,
+				80DB6C991FD4354C007C1121 /* Sources */,
+				80DB6C9A1FD4354C007C1121 /* Frameworks */,
+				80DB6C9B1FD4354C007C1121 /* Resources */,
+				4207C7A169A40829EE365865 /* [CP] Embed Pods Frameworks */,
+				5F9F08BA771DE7F4AB34BB4E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YRequestManager;
+			productName = YRequestManager;
+			productReference = 80DB6C9D1FD4354C007C1121 /* YRequestManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80DB6C951FD4354C007C1121 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "燕文强";
+				TargetAttributes = {
+					80DB6C9C1FD4354C007C1121 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 80DB6C981FD4354C007C1121 /* Build configuration list for PBXProject "YRequestManager" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80DB6C941FD4354C007C1121;
+			productRefGroup = 80DB6C9E1FD4354C007C1121 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80DB6C9C1FD4354C007C1121 /* YRequestManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80DB6C9B1FD4354C007C1121 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80DB6CAD1FD4354C007C1121 /* LaunchScreen.storyboard in Resources */,
+				80DB6CAA1FD4354C007C1121 /* Assets.xcassets in Resources */,
+				80DB6CA81FD4354C007C1121 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0025ECF62BE796FBD215764E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YRequestManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4207C7A169A40829EE365865 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YRequestManager/Pods-YRequestManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F9F08BA771DE7F4AB34BB4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YRequestManager/Pods-YRequestManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80DB6C991FD4354C007C1121 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80DB6CD31FD43620007C1121 /* CentaResponse.m in Sources */,
+				80DB6CD41FD43620007C1121 /* BaseApi.m in Sources */,
+				80DB6CC01FD435EF007C1121 /* PkPositionDo.m in Sources */,
+				80DB6CD81FD43620007C1121 /* InterceptorForRespFail.m in Sources */,
+				80DB6CE71FD4366F007C1121 /* DataConvertInterceptor.m in Sources */,
+				80DB6CED1FD43697007C1121 /* PokemonPositionApi.m in Sources */,
+				80DB6CD91FD43620007C1121 /* AbsApi.m in Sources */,
+				80DB6CA51FD4354C007C1121 /* ViewController.m in Sources */,
+				80DB6CEE1FD43697007C1121 /* PokemonBaseApi.m in Sources */,
+				80DB6CBF1FD435EF007C1121 /* PokemonBaseDo.m in Sources */,
+				80DB6CE31FD43640007C1121 /* ReqLogInterceptor.m in Sources */,
+				80DB6CD21FD43620007C1121 /* InterceptorForRespSuc.m in Sources */,
+				80DB6CE11FD43640007C1121 /* NetworkProtocalInterceptor.m in Sources */,
+				80DB6CD61FD43620007C1121 /* InterceptorForReq.m in Sources */,
+				80DB6CD71FD43620007C1121 /* RequestManager.m in Sources */,
+				80DB6CE21FD43640007C1121 /* RespSucInterceptor.m in Sources */,
+				80DB6CD51FD43620007C1121 /* BaseServiceManager.m in Sources */,
+				80DB6CB01FD4354C007C1121 /* main.m in Sources */,
+				80DB6CA21FD4354C007C1121 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		80DB6CA61FD4354C007C1121 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80DB6CA71FD4354C007C1121 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80DB6CAB1FD4354C007C1121 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80DB6CAC1FD4354C007C1121 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80DB6CB11FD4354C007C1121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		80DB6CB21FD4354C007C1121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80DB6CB41FD4354C007C1121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FFA70E7CC11753321C4CB52 /* Pods-YRequestManager.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YRequestManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yanwq.YRequestManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80DB6CB51FD4354C007C1121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46B47E1FA1DBD22097F1CFE7 /* Pods-YRequestManager.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YRequestManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yanwq.YRequestManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80DB6C981FD4354C007C1121 /* Build configuration list for PBXProject "YRequestManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80DB6CB11FD4354C007C1121 /* Debug */,
+				80DB6CB21FD4354C007C1121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80DB6CB31FD4354C007C1121 /* Build configuration list for PBXNativeTarget "YRequestManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80DB6CB41FD4354C007C1121 /* Debug */,
+				80DB6CB51FD4354C007C1121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80DB6C951FD4354C007C1121 /* Project object */;
+}
