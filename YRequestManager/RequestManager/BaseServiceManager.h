@@ -8,7 +8,7 @@
 
 #import "ApiDelegate.h"
 #import "AbsApi.h"
-#import "AFHTTPSessionManager.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
 #import "InterceptorForReq.h"
 #import "InterceptorForRespSuc.h"
 #import "InterceptorForRespFail.h"
