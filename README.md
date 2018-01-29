@@ -1,4 +1,4 @@
-# Wq_RequestManager
+# YRequestManager
 
 ###### Base AFNetworking Core Network Request Framework
 ![Logo](https://raw.githubusercontent.com/Andy888888/Wq_RequestManager/master/AF_RequestManager/Assets.xcassets/AppIcon.appiconset/network_58.png "AF_RequestManager 图标")<br><br>
