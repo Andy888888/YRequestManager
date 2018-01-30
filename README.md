@@ -4,7 +4,7 @@
 ![Logo](https://raw.githubusercontent.com/Andy888888/Wq_RequestManager/master/AF_RequestManager/Assets.xcassets/AppIcon.appiconset/network_58.png "AF_RequestManager 图标")<br><br>
 
 ## 使用
-`pod search wq_requestmanager`
+`pod search YRequestManager`
 
 ## 结构概览
     1.ApiDelegate
