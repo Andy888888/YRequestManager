@@ -8,9 +8,20 @@
 
 #import "BaseServiceManager.h"
 
+// ----------------- Version 1.0.0 -----------------
 /// ResponseDelegate 数据响应回调协议
 /// @warning 请不要随便修改
 @protocol ResponseDelegate <NSObject>
+/// 响应成功
+- (void)respSuc:(id)data andRespClass:(id)cls;
+/// 响应失败
+- (void)respFail:(NSError *)error andRespClass:(id)cls;
+@end
+// ----------------- Version 1.0.0 -----------------
+
+/// ResponseDelegate 数据响应回调协议
+/// @warning 请不要随便修改
+@protocol YResponseDelegate <NSObject>
 
 /// 响应成功
 - (void)respSuc:(CentaResponse *)resData;
@@ -27,9 +38,17 @@
 /// ResponseDelegate 数据响应回调协议
 @property (nonatomic,assign) id<ResponseDelegate> delegate;
 
-+ (id)defaultManager:(id<ResponseDelegate>)delegate;
+// ----------------- Version 1.0.0 -----------------
 + (id)initManagerWithDelegate:(id<ResponseDelegate>)delegate;
 /// 发送数据请求，参数为继承AbsApi抽象类，且遵守BaseApiDelegate协议 的对象
 - (void)sendRequest:(AbsApi<ApiDelegate>*)api;
+// ----------------- Version 1.0.0 -----------------
+
+/// ResponseDelegate 数据响应回调协议
+@property (nonatomic,assign) id<YResponseDelegate> ydelegate;
++ (id)defaultManager:(id<YResponseDelegate>)delegate;
++ (id)initManagerWithYDelegate:(id<YResponseDelegate>)delegate;
+/// 发送数据请求，参数为继承AbsApi抽象类，且遵守BaseApiDelegate协议 的对象
+- (void)request:(AbsApi<ApiDelegate>*)api;
 
 @end

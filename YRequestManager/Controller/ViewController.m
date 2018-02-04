@@ -11,8 +11,9 @@
 #import "PokemonPositionApi.h"
 #import "PkPositionDo.h"
 #import "DataConvertInterceptor.h"
+#import "NSDictionary+JSONTransfer.h"
 
-@interface ViewController ()<ResponseDelegate>
+@interface ViewController ()<ResponseDelegate,YResponseDelegate>
 
 @end
 
@@ -27,13 +28,50 @@
 }
 
 - (IBAction)click:(id)sender {
+//    [self requestVersion100];
+    [self requestVersion101];
+}
+
+- (void)requestVersion100
+{
+    PokemonPositionApi *api = [[PokemonPositionApi alloc]init];
+    api.user = @"andy";
+    api.pwd = @"pwd";
+    
+    RequestManager *reqManager = [RequestManager initManagerWithDelegate:self];
+    [reqManager sendRequest:api];
+    
+//    [reqManager sendRequest:api sucBlock:^(id result) {
+//        NSDictionary *dic = result;
+//        NSString *dicStr = [dic JSONString];
+//        NSLog(dicStr);
+//    } failBlock:^(NSError *error) {
+//        NSString *resultCode = [NSString stringWithFormat:@"@ld",error.code];
+//        NSLog(resultCode);
+//    }];
+}
+
+- (void)requestVersion101
+{
     PokemonPositionApi *api = [[PokemonPositionApi alloc]init];
     api.user = @"andy";
     api.pwd = @"pwd";
     
     RequestManager *reqManager = [RequestManager defaultManager:self];
     [reqManager setInterceptorForSuc:[DataConvertInterceptor new]];
-    [reqManager sendRequest:api];
+    [reqManager request:api];
+    
+//    [reqManager request:api sucBlock:^(CentaResponse *result) {
+//        if(result.suc){
+//            PkPositionDo *position = result.data;
+//            NSString *status = position.status;
+//            NSLog(status);
+//        }else{
+//            NSLog(result.msg);
+//        }
+//    } failBlock:^(CentaResponse *error) {
+//        NSLog(error.msg);
+//    }];
 }
 
 - (void)respSuc:(CentaResponse *)resData
@@ -51,6 +89,20 @@
 {
     NSLog(error.msg);
 }
+
+
+- (void)respSuc:(id)data andRespClass:(id)cls{
+    NSDictionary *dic = data;
+    NSString *dicStr = [dic JSONString];
+    NSLog(dicStr);
+}
+
+- (void)respFail:(NSError *)error andRespClass:(id)cls
+{
+    NSString *resultCode = [NSString stringWithFormat:@"@ld",error.code];
+    NSLog(resultCode);
+}
+
 
 
 @end
