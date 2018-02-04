@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YRequestManager"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "Network Request Manager Base IOS AFNetworking Framework "
   s.description  = <<-DESC
                           基于AFNetworking作为网络请求核心（升级版本），封装的一个网络请求框架。说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少,说描述信息不能比概述少.
