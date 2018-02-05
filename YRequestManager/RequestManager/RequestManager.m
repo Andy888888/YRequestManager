@@ -10,7 +10,7 @@
 #import "ReqLogInterceptor.h"
 #import "NetworkProtocalInterceptor.h"
 #import "RespSucInterceptor.h"
-#import "NSDictionary+JSONTransfer.h"
+#import "NSDictionary+Json.h"
 
 @implementation RequestManager
 
@@ -76,7 +76,7 @@
     Class cls = [api getRespClass];
     
     NSLog(@"********[请求地址：%@]",requestUrl);
-    NSLog(@"********[请求参数：%@]",[bodyDic JSONString]);
+    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
     
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     

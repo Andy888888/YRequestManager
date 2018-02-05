@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary (JSONTransfer)
+@interface NSDictionary (Json)
 /// 字典转换为JSON串
-- (NSString *)JSONString;
+- (NSString *)JsonString;
 @end

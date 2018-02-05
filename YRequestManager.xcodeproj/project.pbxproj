@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8078C482202428B200EFBEA7 /* NSDictionary+JSONTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8078C481202428B200EFBEA7 /* NSDictionary+JSONTransfer.m */; };
+		80A40DF42028094F00C9CCE1 /* NSDictionary+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A40DF32028094E00C9CCE1 /* NSDictionary+Json.m */; };
 		80DB6CA21FD4354C007C1121 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CA11FD4354C007C1121 /* AppDelegate.m */; };
 		80DB6CA51FD4354C007C1121 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DB6CA41FD4354C007C1121 /* ViewController.m */; };
 		80DB6CA81FD4354C007C1121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DB6CA61FD4354C007C1121 /* Main.storyboard */; };
@@ -37,8 +37,8 @@
 		1FFA70E7CC11753321C4CB52 /* Pods-YRequestManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YRequestManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YRequestManager/Pods-YRequestManager.debug.xcconfig"; sourceTree = "<group>"; };
 		46B47E1FA1DBD22097F1CFE7 /* Pods-YRequestManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YRequestManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-YRequestManager/Pods-YRequestManager.release.xcconfig"; sourceTree = "<group>"; };
 		51805ECDC220F939E58CAD98 /* libPods-YRequestManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YRequestManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8078C480202428B200EFBEA7 /* NSDictionary+JSONTransfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONTransfer.h"; sourceTree = "<group>"; };
-		8078C481202428B200EFBEA7 /* NSDictionary+JSONTransfer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONTransfer.m"; sourceTree = "<group>"; };
+		80A40DF22028094E00C9CCE1 /* NSDictionary+Json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Json.h"; sourceTree = "<group>"; };
+		80A40DF32028094E00C9CCE1 /* NSDictionary+Json.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Json.m"; sourceTree = "<group>"; };
 		80DB6C9D1FD4354C007C1121 /* YRequestManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YRequestManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DB6CA01FD4354C007C1121 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		80DB6CA11FD4354C007C1121 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 		80DB6CB91FD435B9007C1121 /* RequestManager */ = {
 			isa = PBXGroup;
 			children = (
-				8078C480202428B200EFBEA7 /* NSDictionary+JSONTransfer.h */,
-				8078C481202428B200EFBEA7 /* NSDictionary+JSONTransfer.m */,
+				80A40DF22028094E00C9CCE1 /* NSDictionary+Json.h */,
+				80A40DF32028094E00C9CCE1 /* NSDictionary+Json.m */,
 				80DB6CDA1FD43629007C1121 /* Interceptor */,
 				80DB6CC11FD4361F007C1121 /* AbsApi.h */,
 				80DB6CD11FD43620007C1121 /* AbsApi.m */,
@@ -376,12 +376,12 @@
 				80DB6CC01FD435EF007C1121 /* PkPositionDo.m in Sources */,
 				80DB6CD81FD43620007C1121 /* InterceptorForRespFail.m in Sources */,
 				80DB6CE71FD4366F007C1121 /* DataConvertInterceptor.m in Sources */,
-				8078C482202428B200EFBEA7 /* NSDictionary+JSONTransfer.m in Sources */,
 				80DB6CED1FD43697007C1121 /* PokemonPositionApi.m in Sources */,
 				80DB6CD91FD43620007C1121 /* AbsApi.m in Sources */,
 				80DB6CA51FD4354C007C1121 /* ViewController.m in Sources */,
 				80DB6CEE1FD43697007C1121 /* PokemonBaseApi.m in Sources */,
 				80DB6CBF1FD435EF007C1121 /* PokemonBaseDo.m in Sources */,
+				80A40DF42028094F00C9CCE1 /* NSDictionary+Json.m in Sources */,
 				80DB6CE31FD43640007C1121 /* ReqLogInterceptor.m in Sources */,
 				80DB6CD21FD43620007C1121 /* InterceptorForRespSuc.m in Sources */,
 				80DB6CE11FD43640007C1121 /* NetworkProtocalInterceptor.m in Sources */,

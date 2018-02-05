@@ -6,12 +6,12 @@
 //  Copyright © 2018年 燕文强. All rights reserved.
 //
 
-#import "NSDictionary+JSONTransfer.h"
+#import "NSDictionary+Json.h"
 
-@implementation NSDictionary (JSONTransfer)
+@implementation NSDictionary (Json)
 
 /// 字典转换为JSON串
-- (NSString *)JSONString
+- (NSString *)JsonString
 {
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self

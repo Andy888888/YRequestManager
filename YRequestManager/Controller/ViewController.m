@@ -11,7 +11,7 @@
 #import "PokemonPositionApi.h"
 #import "PkPositionDo.h"
 #import "DataConvertInterceptor.h"
-#import "NSDictionary+JSONTransfer.h"
+#import "NSDictionary+Json.h"
 
 @interface ViewController ()<ResponseDelegate,YResponseDelegate>
 
@@ -93,7 +93,7 @@
 
 - (void)respSuc:(id)data andRespClass:(id)cls{
     NSDictionary *dic = data;
-    NSString *dicStr = [dic JSONString];
+    NSString *dicStr = [dic JsonString];
     NSLog(dicStr);
 }
 
