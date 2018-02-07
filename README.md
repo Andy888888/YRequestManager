@@ -67,7 +67,7 @@
 
 ### 1.Api配置类
 
-	Api配置类使用
+* Api配置类使用
 
 ```Object-C
 // 导入
@@ -100,9 +100,10 @@
     }
     return nil;
 }
-
 @end
+```
 
+```Object-C
 // PokemonPositionApi继承自PokemonBaseApi
 @implementation PokemonPositionApi
 
@@ -130,7 +131,7 @@
 
 ```
 
-	Api配置类的实例化
+* Api配置类的实例化
 
 ```Object-C
 
@@ -144,6 +145,8 @@ api.pwd = @"pwd";
 
 ### 2.RequestManager请求
 
+* RequestManager请求
+
 ```Object-C
 
 #import "RequestManager.h"
@@ -152,7 +155,41 @@ api.pwd = @"pwd";
 RequestManager *reqManager = [RequestManager defaultManager:self];
 // 添加响应成功后，数据转换实体方式拦截器
 [reqManager setInterceptorForSuc:[DataConvertInterceptor new]];
-// 发送请求
+// 发送请求：Protocol方式接收数据
 [reqManager request:api];
+
+// 发送请求：Block方式接收数据
+[reqManager request:api sucBlock:^(CentaResponse *result) {
+        if(result.suc){
+            PkPositionDo *position = result.data;
+            NSString *status = position.status;
+            NSLog(status);
+        }else{
+            NSLog(result.msg);
+        }
+    } failBlock:^(CentaResponse *error) {
+        NSLog(error.msg);
+    }];
+
+```
+
+* DataConvertInterceptor （继承自InterceptorForRespSuc）
+
+    DataConvertInterceptor并非框架自带，因为框架不应该绑架业务层使用什么做数据转换，
+    因此，这个过程开放出来，自行决定。（示例代码中是使用yyModel转换）
+
+```Object-C
+
+- (CentaResponse *)convertData:(id)task andRespData:(id)respData andApi:(AbsApi<ApiDelegate> *)api
+{
+    CentaResponse *resp =  [super convertData:task andRespData:respData andApi:api];
+    NSDictionary *dic = resp.data;
+    
+    // 使用yymodel转换成目标实体
+    Class cls = api.getRespClass;
+    resp.data = [cls yy_modelWithDictionary:dic];
+    
+    return resp;
+}
 
 ```
