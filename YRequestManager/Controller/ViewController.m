@@ -29,7 +29,7 @@
 
 - (IBAction)click:(id)sender {
 //    [self requestVersion100];
-    [self requestVersion101];
+    [self requestVersion105];
 }
 
 - (void)requestVersion100
@@ -51,7 +51,7 @@
 //    }];
 }
 
-- (void)requestVersion101
+- (void)requestVersion105
 {
     PokemonPositionApi *api = [[PokemonPositionApi alloc]init];
     api.user = @"andy";
