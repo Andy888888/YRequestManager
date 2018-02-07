@@ -21,6 +21,7 @@
 //    CentaResponse *resp = [super intercept:api];
 //    resp.msg = @"没理由，就是不想让你请求！";
 //    resp.suc = NO;
+//    return resp;
     
     return [super intercept:api];
 }

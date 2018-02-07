@@ -55,5 +55,9 @@ typedef void (^RespFailBlock)(CentaResponse *error);
 - (void)addIntercepterForRespFail:(InterceptorForRespFail *)interceptor;
 - (CentaResponse *)error2CentaResponse:(NSError *)error
                                 andApi:(AbsApi<ApiDelegate>*)api;
+- (CentaResponse *)checkReqInterceptor:(AbsApi<ApiDelegate>*)api;
+- (CentaResponse *)checkRespInterceptor:(AbsApi<ApiDelegate>*)api
+                                   task:(NSURLSessionDataTask * _Nullable)task
+                                  error:(NSError * _Nonnull)error;
 
 @end

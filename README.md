@@ -22,7 +22,7 @@
 * `getReqUrl`       用来配置请求地址Url，遵守者实现该方法需返回一个`NSString`对象。<br>
 * `getReqHeader`    用来配置请求Header，遵守者实现该方法需返回一个`NSDictionary`对象。<br>
 * `getReqBody`      用来配置请求Body，遵守者实现该方法需返回一个`NSDictionary`对象。<br>
-* `getRequestMethod`用来配置该请求方式，目前设置了两种模式，用enum枚举RequestMethod来区分，可返回`RequestMethodPOST`（Post请求）或者`RequestMethodGET`（Get请求）,其他的请求方式后期补充。<br>
+* `getRequestMethod`用来配置该请求方式，用enum枚举RequestMethod来区分，可返回`RequestMethodPOST`（Post请求）、`RequestMethodGET`（Get请求）`RequestMethodPUT`（Put请求）、`RequestMethodDELETE`（Delete请求）。<br>
 * `getTimeOut`      用来配置请求超时时间。<br><br><br>
 
 
@@ -64,7 +64,7 @@
 我们可以直接使用`initManagerWithYDelegate:`或者`defaultManager`方法来初始化RequestManager对象，将数据回调协议delegate传入。<br>
 使用`request:`方法来发送请求，同父类一致，api参数为继承AbsApi抽象类，且遵守`BaseApiDelegate`协议的对象。而上述`BaseApi`就符合这一点，而BaseApi如果不符合你的口味，你可以来自定义一个继承AbsApi又遵守BaseApiDelegate协议的对象。
 
-</br></br></br></br></br></br></br></br>
+<br><br><br><br><br><br><br><br>
 
 ## 使用方式
 
@@ -145,7 +145,7 @@ api.user = @"andy";
 api.pwd = @"pwd";
 
 ```
-</br></br></br></br></br></br>
+<br><br><br><br><br><br>
 
 ### 2.RequestManager请求
 
@@ -176,9 +176,9 @@ RequestManager *reqManager = [RequestManager defaultManager:self];
     }];
 
 ```
-</br></br>
+<br><br>
 
-* DataConver</br>tInterceptor （继承自InterceptorForRespSuc）
+* DataConvertInterceptor （继承自InterceptorForRespSuc）
 
     DataConvertInterceptor并非框架自带，因为框架不应该绑架业务层使用什么做数据转换，  
     因此，这个过程开放出来，自行决定。（示例代码中是使用yyModel转换）

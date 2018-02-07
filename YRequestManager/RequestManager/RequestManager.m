@@ -61,13 +61,26 @@
     if(requestMethod == RequestMethodPOST)
     {
         [self requestPOST:api];
+        return;
     }
-    else
+    if(requestMethod == RequestMethodGET)
     {
         [self requestGET:api];
+        return;
+    }
+    if(requestMethod == RequestMethodPUT)
+    {
+        [self requestPUT:api];
+        return;
+    }
+    if(requestMethod == RequestMethodDELETE)
+    {
+        [self requestDELETE:api];
+        return;
     }
 }
 
+#pragma mark - Version 1.0.0
 // ----------------- Version 1.0.0 -----------------
 - (void)postRequest:(AbsApi<ApiDelegate>*)api
 {
@@ -136,25 +149,15 @@
 }
 // ----------------- Version 1.0.0 -----------------
 
+#pragma mark - Version 1.0.5
 - (void)requestPOST:(AbsApi<ApiDelegate>*)api
 {
     NSString *requestUrl = [api getReqUrl];
     NSDictionary *bodyDic = [api getReqBody];
     
-    BOOL intercepterReq = NO;
-    for (InterceptorForReq *item in self.interceptorsForReq)
-    {
-        CentaResponse *resp = [item intercept:api];
-        BOOL valid = resp.suc;
-        if(!valid)
-        {
-            intercepterReq = YES;
-            [self.ydelegate respFail:resp];
-            break;
-        }
-    }
-    if(intercepterReq)
-    {
+    CentaResponse *reqResp = [self checkReqInterceptor:api];
+    if(nil != reqResp){
+        [self.ydelegate respFail:reqResp];
         return;
     }
     
@@ -163,36 +166,13 @@
     [manager POST:requestUrl
        parameters:bodyDic
          progress:^(NSProgress * _Nonnull uploadProgress) {
-             NSLog(@"%@",uploadProgress);
+             
          } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              // 请求成功
-             if (self.ydelegate)
-             {
-                 [self.ydelegate respSuc:[self.interceptorForSuc intercept:task andRespData:responseObject andApi:api]];
-             }
-             
+             [self sucFunction:api task:task respData:responseObject];
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              // 请求失败
-             BOOL intercept = NO;
-             for (InterceptorForRespFail *item in self.interceptorsForResp) {
-                 CentaResponse *resp = [item intercept:task andRespData:error andApi:api];
-                 BOOL valid = resp.suc;
-                 if(!valid)
-                 {
-                     intercept = YES;
-                     [self.ydelegate respFail:resp];
-                     break;
-                 }
-             }
-             
-             if(intercept){
-                 return;
-             }
-             
-             if (self.ydelegate)
-             {
-                 [self.ydelegate respFail:[self error2CentaResponse:error andApi:api]];
-             }
+             [self failFunction:api task:task error:error];
          }];
 }
 
@@ -200,18 +180,9 @@
 {
     NSString *requestUrl = [self getReqGetUrl:api];
     
-    BOOL intercepterReq = NO;
-    for (InterceptorForReq *item in self.interceptorsForReq) {
-        CentaResponse *resp = [item intercept:api];
-        BOOL valid = resp.suc;
-        if(!valid)
-        {
-            intercepterReq = YES;
-            [self.ydelegate respFail:resp];
-            break;
-        }
-    }
-    if(intercepterReq){
+    CentaResponse *reqResp = [self checkReqInterceptor:api];
+    if(nil != reqResp){
+        [self.ydelegate respFail:reqResp];
         return;
     }
     
@@ -222,33 +193,83 @@
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             // 请求成功
-            if (self.ydelegate)
-            {
-                [self.ydelegate respSuc:[self.interceptorForSuc intercept:task andRespData:responseObject andApi:api]];
-            }
+            [self sucFunction:api task:task respData:responseObject];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             // 请求失败
-            BOOL intercept = NO;
-            for (InterceptorForRespFail *item in self.interceptorsForResp) {
-                CentaResponse *resp = [item intercept:task andRespData:error andApi:api];
-                BOOL valid = resp.suc;
-                if(!valid)
-                {
-                    intercept = YES;
-                    [self.ydelegate respFail:resp];
-                    break;
-                }
-            }
-            
-            if(intercept){
-                return;
-            }
-            
-            if (self.ydelegate)
-            {
-                [self.ydelegate respFail:[self error2CentaResponse:error andApi:api]];
-            }
+            [self failFunction:api task:task error:error];
         }];
+}
+
+- (void)requestPUT:(AbsApi<ApiDelegate>*)api
+{
+    NSString *requestUrl = [api getReqUrl];
+    NSDictionary *bodyDic = [api getReqBody];
+    
+    CentaResponse *reqResp = [self checkReqInterceptor:api];
+    if(nil != reqResp){
+        [self.ydelegate respFail:reqResp];
+        return;
+    }
+    
+    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
+    
+    [manager PUT:requestUrl
+      parameters:bodyDic
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             // 请求成功
+             [self sucFunction:api task:task respData:responseObject];
+         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             // 请求失败
+             [self failFunction:api task:task error:error];
+         }];
+}
+
+- (void)requestDELETE:(AbsApi<ApiDelegate>*)api
+{
+    NSString *requestUrl = [api getReqUrl];
+    NSDictionary *bodyDic = [api getReqBody];
+    
+    CentaResponse *reqResp = [self checkReqInterceptor:api];
+    if(nil != reqResp){
+        [self.ydelegate respFail:reqResp];
+        return;
+    }
+    
+    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
+    
+    [manager DELETE:requestUrl
+         parameters:bodyDic
+            success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                // 请求成功
+                [self sucFunction:api task:task respData:responseObject];
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                // 请求失败
+                [self failFunction:api task:task error:error];
+            }];
+}
+
+#pragma mark - 私有方法
+// 请求成功
+- (void)sucFunction:(AbsApi<ApiDelegate> *)api task:(id)task respData:(id)respData
+{
+    if (self.ydelegate)
+    {
+        [self.ydelegate respSuc:[self.interceptorForSuc intercept:task andRespData:respData andApi:api]];
+    }
+}
+
+// 请求失败
+- (void)failFunction:(AbsApi<ApiDelegate> *)api task:(id)task error:(id)error
+{
+    CentaResponse *respResp = [self checkRespInterceptor:api task:task error:error];
+    if(nil != respResp){
+        [self.ydelegate respFail:respResp];
+        return;
+    }
+    
+    if (self.ydelegate) {
+        [self.ydelegate respFail:[self error2CentaResponse:error andApi:api]];
+    }
 }
 
 @end

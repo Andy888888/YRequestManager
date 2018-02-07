@@ -90,7 +90,6 @@
     NSLog(error.msg);
 }
 
-
 - (void)respSuc:(id)data andRespClass:(id)cls{
     NSDictionary *dic = data;
     NSString *dicStr = [dic JsonString];
@@ -99,7 +98,7 @@
 
 - (void)respFail:(NSError *)error andRespClass:(id)cls
 {
-    NSString *resultCode = [NSString stringWithFormat:@"@ld",error.code];
+    NSString *resultCode = [NSString stringWithFormat:@"%ld",error.code];
     NSLog(resultCode);
 }
 

@@ -15,7 +15,11 @@ enum RequestMethod
     /// Post请求方式
     RequestMethodPOST = 1,
     /// Get请求方式
-    RequestMethodGET = 2
+    RequestMethodGET = 2,
+    /// Put请求方式
+    RequestMethodPUT = 3,
+    /// Delete请求方式
+    RequestMethodDELETE = 4
 };
 
 /// AbsApi 请求抽象类
