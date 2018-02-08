@@ -1,6 +1,7 @@
 ![Logo](https://raw.githubusercontent.com/Andy888888/Wq_RequestManager/master/AF_RequestManager/Assets.xcassets/AppIcon.appiconset/network_58.png "YRequestManager 图标")<br><br>
 # YRequestManager
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/YRequestManager.svg)](https://img.shields.io/cocoapods/v/YRequestManager.svg)
+[![Language](https://img.shields.io/badge/language-swift-orange.svg)](https://img.shields.io/badge/language-swift-orange.svg)
 [![Platform](https://img.shields.io/cocoapods/p/YRequestManager.svg?style=flat)](https://img.shields.io/cocoapods/p/YRequestManager.svg)
 [![Download](https://img.shields.io/cocoapods/dt/YRequestManager.svg)](https://img.shields.io/cocoapods/dt/YRequestManager.svg)
 
