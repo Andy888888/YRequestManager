@@ -1,4 +1,5 @@
-![Logo](https://raw.githubusercontent.com/Andy888888/Wq_RequestManager/master/AF_RequestManager/Assets.xcassets/AppIcon.appiconset/network_58.png "YRequestManager 图标")<br><br>
+![Logo](https://raw.githubusercontent.com/Andy888888/Wq_RequestManager/master/AF_RequestManager/Assets.xcassets/AppIcon.appiconset/network_58.png "YRequestManager 图标")<br><br>  
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/YRequestManager.svg)](https://img.shields.io/cocoapods/v/YRequestManager.svg)
 # YRequestManager
 
 ###### Base AFNetworking Core Network Request Framework
