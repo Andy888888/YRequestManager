@@ -2,6 +2,9 @@
 # YRequestManager
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/YRequestManager.svg)](https://img.shields.io/cocoapods/v/YRequestManager.svg)
 [![Platform](https://img.shields.io/cocoapods/p/YRequestManager.svg?style=flat)](https://img.shields.io/cocoapods/p/YRequestManager.svg)
+[![Download](https://img.shields.io/cocoapods/dt/YRequestManager.svg?style=flat)](https://img.shields.io/cocoapods/dt/YRequestManager.svg)
+
+
 ###### Base AFNetworking Core Network Request Framework
 
 ![Description](https://raw.githubusercontent.com/Andy888888/YRequestManager/master/YRequestManager.jpeg "YRequestManager图解")<br><br>
