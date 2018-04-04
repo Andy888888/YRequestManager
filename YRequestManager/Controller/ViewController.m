@@ -79,6 +79,8 @@
     if(resData.suc){
         PkPositionDo *position = resData.data;
         NSString *status = position.status;
+        NSString *resultTxt = [@"请求结果：" stringByAppendingString:status];
+        [_resultLabel setText:resultTxt];
         NSLog(status);
     }else{
         NSLog(resData.msg);

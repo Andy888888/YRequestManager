@@ -36,8 +36,22 @@
     int requestMethod = [api getRequestMethod];
     if(requestMethod == RequestMethodPOST){
         [self postRequest:api sucBlock:sucBlock failBlock:failBlock];
-    }else{
+        return;
+    }
+    if(requestMethod == RequestMethodGET)
+    {
         [self getRequest:api sucBlock:sucBlock failBlock:failBlock];
+        return;
+    }
+    if(requestMethod == RequestMethodPUT)
+    {
+        [self putRequest:api sucBlock:sucBlock failBlock:failBlock];
+        return;
+    }
+    if(requestMethod == RequestMethodDELETE)
+    {
+        [self deleteRequest:api sucBlock:sucBlock failBlock:failBlock];
+        return;
     }
 }
 // ----------------- Version 1.0.0 -----------------
@@ -176,6 +190,69 @@
             }
         }];
 }
+
+- (void)putRequest:(AbsApi<ApiDelegate>*)api
+           sucBlock:(ResponseSuccessBlock)sucBlock
+          failBlock:(ResponseFailureBlock)failBlock;
+{
+    NSString *requestUrl = [api getReqUrl];
+    NSDictionary *bodyDic = [api getReqBody];
+    
+    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
+    
+    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
+    
+    [manager PUT:requestUrl
+       parameters:bodyDic
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             NSLog(@"%@",task);
+             //请求成功
+             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                 options:NSJSONReadingAllowFragments
+                                                                   error:nil];
+             if (sucBlock) {
+                 sucBlock(dic);
+             }
+             
+         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             //请求失败
+             if (failBlock) {
+                 failBlock(error);
+             }
+         }];
+}
+
+- (void)deleteRequest:(AbsApi<ApiDelegate>*)api
+          sucBlock:(ResponseSuccessBlock)sucBlock
+         failBlock:(ResponseFailureBlock)failBlock;
+{
+    NSString *requestUrl = [api getReqUrl];
+    NSDictionary *bodyDic = [api getReqBody];
+    
+    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
+    
+    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
+    
+    [manager DELETE:requestUrl
+      parameters:bodyDic
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             NSLog(@"%@",task);
+             //请求成功
+             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                 options:NSJSONReadingAllowFragments
+                                                                   error:nil];
+             if (sucBlock) {
+                 sucBlock(dic);
+             }
+             
+         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             //请求失败
+             if (failBlock) {
+                 failBlock(error);
+             }
+         }];
+}
+
 // ----------------- Version 1.0.0 -----------------
 
 #pragma mark - Version 1.0.5

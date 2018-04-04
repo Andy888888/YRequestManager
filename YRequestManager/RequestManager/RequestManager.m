@@ -47,10 +47,22 @@
     if(requestMethod == RequestMethodPOST)
     {
         [self postRequest:api];
+        return;
     }
-    else
+    if(requestMethod == RequestMethodGET)
     {
         [self getRequest:api];
+        return;
+    }
+    if(requestMethod == RequestMethodPUT)
+    {
+        [self putRequest:api];
+        return;
+    }
+    if(requestMethod == RequestMethodDELETE)
+    {
+        [self deleteRequest:api];
+        return;
     }
 }
 // ----------------- Version 1.0.0 -----------------
@@ -147,6 +159,79 @@
             }
         }];
 }
+
+- (void)putRequest:(AbsApi<ApiDelegate>*)api
+{
+    NSString *requestUrl = [api getReqUrl];
+    NSDictionary *bodyDic = [api getReqBody];
+    Class cls = [api getRespClass];
+    
+    NSLog(@"********[请求地址：%@]",requestUrl);
+    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
+    
+    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
+    
+    [manager PUT:requestUrl
+       parameters:bodyDic
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             //请求成功
+             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                 options:NSJSONReadingAllowFragments
+                                                                   error:nil];
+             
+             NSLog(@"********[返回参数：%@]",dic);
+             
+             if (self.delegate) {
+                 [self.delegate respSuc:dic andRespClass:cls];
+             }
+             
+         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             //请求失败
+             NSHTTPURLResponse *urlResp = (NSHTTPURLResponse *)task.response;
+             NSError *newError = [NSError errorWithDomain:error.domain code:urlResp.statusCode userInfo:error.userInfo];
+             
+             if (self.delegate) {
+                 [self.delegate respFail:newError andRespClass:cls];
+             }
+         }];
+}
+
+- (void)deleteRequest:(AbsApi<ApiDelegate>*)api
+{
+    NSString *requestUrl = [api getReqUrl];
+    NSDictionary *bodyDic = [api getReqBody];
+    Class cls = [api getRespClass];
+    
+    NSLog(@"********[请求地址：%@]",requestUrl);
+    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
+    
+    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
+    
+    [manager DELETE:requestUrl
+      parameters:bodyDic
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             //请求成功
+             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                 options:NSJSONReadingAllowFragments
+                                                                   error:nil];
+             
+             NSLog(@"********[返回参数：%@]",dic);
+             
+             if (self.delegate) {
+                 [self.delegate respSuc:dic andRespClass:cls];
+             }
+             
+         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             //请求失败
+             NSHTTPURLResponse *urlResp = (NSHTTPURLResponse *)task.response;
+             NSError *newError = [NSError errorWithDomain:error.domain code:urlResp.statusCode userInfo:error.userInfo];
+             
+             if (self.delegate) {
+                 [self.delegate respFail:newError andRespClass:cls];
+             }
+         }];
+}
+
 // ----------------- Version 1.0.0 -----------------
 
 #pragma mark - Version 1.0.5
