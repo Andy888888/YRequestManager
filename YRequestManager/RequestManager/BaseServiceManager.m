@@ -123,6 +123,11 @@
         }
     }
     
+    if(reqUrl.length > 0){
+        reqUrl = [reqUrl stringByAddingPercentEncodingWithAllowedCharacters:
+                  [NSCharacterSet URLQueryAllowedCharacterSet]];
+    }
+    
     return reqUrl;
 }
 

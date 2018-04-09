@@ -28,6 +28,7 @@
 }
 
 - (IBAction)click:(id)sender {
+    [_resultLabel setText:@"response："];
 //    [self requestVersion100];
     [self requestVersion105];
 }
@@ -54,7 +55,7 @@
 - (void)requestVersion105
 {
     PokemonPositionApi *api = [[PokemonPositionApi alloc]init];
-    api.user = @"andy";
+    api.user = @"a n d y";
     api.pwd = @"pwd";
     
     RequestManager *reqManager = [RequestManager defaultManager:self];
@@ -79,7 +80,7 @@
     if(resData.suc){
         PkPositionDo *position = resData.data;
         NSString *status = position.status;
-        NSString *resultTxt = [@"请求结果：" stringByAppendingString:status];
+        NSString *resultTxt = [@"response：" stringByAppendingString:status];
         [_resultLabel setText:resultTxt];
         NSLog(status);
     }else{
