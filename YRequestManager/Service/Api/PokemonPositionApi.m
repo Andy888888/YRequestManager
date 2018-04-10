@@ -31,4 +31,8 @@
     return RequestMethodGET;
 }
 
+- (BOOL)isUrlEncode{
+    return YES;
+}
+
 @end

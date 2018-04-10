@@ -49,4 +49,7 @@ enum RequestMethod
 /// @warning 默认为nil，用来区分返回来的数据类型，以及指定序列化dic为实体对象的class类型
 - (Class)getRespClass;
 
+/// 请求url是否要编码
+- (BOOL)isUrlEncode;
+
 @end

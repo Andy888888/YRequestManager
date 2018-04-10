@@ -43,4 +43,9 @@
     return  nil;
 }
 
+- (BOOL)isUrlEncode
+{
+    return NO;
+}
+
 @end
