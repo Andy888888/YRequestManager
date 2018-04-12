@@ -422,14 +422,15 @@
            failBlock:(RespFailBlock)failBlock;
 {
     CentaResponse *respResp = [self checkRespInterceptor:api task:task error:error];
+    if(!failBlock){
+        return;
+    }
+    
     if(nil != respResp){
         failBlock(respResp);
         return;
     }
-    
-    if (failBlock) {
-        failBlock([self error2CentaResponse:error andApi:api]);
-    }
+    failBlock([self error2CentaResponse:error andApi:api]);
 }
 
 - (void)setAcceptableContentTypes:(AFHTTPSessionManager *)manager
