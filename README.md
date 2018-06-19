@@ -5,6 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/YRequestManager.svg?style=flat)](https://img.shields.io/cocoapods/p/YRequestManager.svg)
 [![Download](https://img.shields.io/cocoapods/dt/YRequestManager.svg)](https://img.shields.io/cocoapods/dt/YRequestManager.svg)
 
+联系我：yanwenqiang1991@foxmail.com
 
 ###### Base AFNetworking Core Network Request Framework
 
