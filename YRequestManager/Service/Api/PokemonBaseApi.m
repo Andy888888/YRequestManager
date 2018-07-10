@@ -39,4 +39,8 @@
     return nil;
 }
 
+- (BOOL)logEnable{
+    return NO;
+}
+
 @end
