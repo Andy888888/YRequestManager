@@ -145,16 +145,12 @@
     NSString *requestUrl = [api getReqUrl];
     NSDictionary *bodyDic = [api getReqBody];
     
-    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
-    
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     
     [manager POST:requestUrl
        parameters:bodyDic
          progress:^(NSProgress * _Nonnull uploadProgress) {
-             NSLog(@"%@",uploadProgress);
          } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             NSLog(@"%@",task);
              //请求成功
              NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                  options:NSJSONReadingAllowFragments
@@ -176,7 +172,6 @@
          failBlock:(ResponseFailureBlock)failBlock;
 {
     NSString *requestUrl = [self getReqGetUrl:api];
-    NSLog(@"********[请求地址：%@]",requestUrl);
     
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     [manager GET:requestUrl
@@ -206,14 +201,11 @@
     NSString *requestUrl = [api getReqUrl];
     NSDictionary *bodyDic = [api getReqBody];
     
-    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
-    
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     
     [manager PUT:requestUrl
        parameters:bodyDic
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             NSLog(@"%@",task);
              //请求成功
              NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                  options:NSJSONReadingAllowFragments
@@ -237,14 +229,11 @@
     NSString *requestUrl = [api getReqUrl];
     NSDictionary *bodyDic = [api getReqBody];
     
-    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
-    
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     
     [manager DELETE:requestUrl
       parameters:bodyDic
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             NSLog(@"%@",task);
              //请求成功
              NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                  options:NSJSONReadingAllowFragments

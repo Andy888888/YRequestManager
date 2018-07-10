@@ -12,10 +12,14 @@
 
 - (CentaResponse *)intercept:(AbsApi<ApiDelegate> *)api
 {
-    NSString *requestUrl = [api getReqUrl];
-    NSDictionary *bodyDic = [api getReqBody];
-    NSLog(@"********[请求地址：%@]",requestUrl);
-    NSLog(@"********[请求参数：%@]",bodyDic);
+    BOOL logEnable = [api logEnable];
+    if(logEnable)
+    {
+        NSString *requestUrl = [api getReqUrl];
+        NSDictionary *bodyDic = [api getReqBody];
+        NSLog(@"********[请求地址：%@]",requestUrl);
+        NSLog(@"********[请求参数：%@]",bodyDic);
+    }
     
 #warning 若是拦截，请将resp.suc置为NO
 //    CentaResponse *resp = [super intercept:api];

@@ -100,22 +100,16 @@
     NSDictionary *bodyDic = [api getReqBody];
     Class cls = [api getRespClass];
     
-    NSLog(@"********[请求地址：%@]",requestUrl);
-    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
-    
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     
     [manager POST:requestUrl
        parameters:bodyDic
          progress:^(NSProgress * _Nonnull uploadProgress) {
-             NSLog(@"%@",uploadProgress);
          } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              //请求成功
              NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                  options:NSJSONReadingAllowFragments
                                                                    error:nil];
-             
-             NSLog(@"********[返回参数：%@]",dic);
              
              if (self.delegate) {
                  [self.delegate respSuc:dic andRespClass:cls];
@@ -136,7 +130,6 @@
 {
     NSString *requestUrl = [self getReqGetUrl:api];
     Class cls = [api getRespClass];
-    NSLog(@"********[请求地址：%@]",requestUrl);
     
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     [manager GET:requestUrl
@@ -166,9 +159,6 @@
     NSDictionary *bodyDic = [api getReqBody];
     Class cls = [api getRespClass];
     
-    NSLog(@"********[请求地址：%@]",requestUrl);
-    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
-    
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     
     [manager PUT:requestUrl
@@ -178,8 +168,6 @@
              NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                  options:NSJSONReadingAllowFragments
                                                                    error:nil];
-             
-             NSLog(@"********[返回参数：%@]",dic);
              
              if (self.delegate) {
                  [self.delegate respSuc:dic andRespClass:cls];
@@ -202,8 +190,6 @@
     NSDictionary *bodyDic = [api getReqBody];
     Class cls = [api getRespClass];
     
-    NSLog(@"********[请求地址：%@]",requestUrl);
-    NSLog(@"********[请求参数：%@]",[bodyDic JsonString]);
     
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     
@@ -214,8 +200,6 @@
              NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                  options:NSJSONReadingAllowFragments
                                                                    error:nil];
-             
-             NSLog(@"********[返回参数：%@]",dic);
              
              if (self.delegate) {
                  [self.delegate respSuc:dic andRespClass:cls];

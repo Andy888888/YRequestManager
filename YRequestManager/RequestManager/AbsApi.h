@@ -52,4 +52,6 @@ enum RequestMethod
 /// 请求url是否要编码
 - (BOOL)isUrlEncode;
 
+- (BOOL)logEnable;
+
 @end
