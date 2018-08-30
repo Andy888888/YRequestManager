@@ -106,13 +106,8 @@
        parameters:bodyDic
          progress:^(NSProgress * _Nonnull uploadProgress) {
          } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             //请求成功
-             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                 options:NSJSONReadingAllowFragments
-                                                                   error:nil];
-             
              if (self.delegate) {
-                 [self.delegate respSuc:dic andRespClass:cls];
+                 [self.delegate respSuc:responseObject andRespClass:cls];
              }
              
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -128,21 +123,18 @@
 
 - (void)getRequest:(AbsApi<ApiDelegate>*)api
 {
-    NSString *requestUrl = [self getReqGetUrl:api];
+    NSString *requestUrl = [api getReqUrl];
+//    NSString *requestUrl = [self getReqGetUrl:api];
     Class cls = [api getRespClass];
     
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     [manager GET:requestUrl
-      parameters:nil
+      parameters:[api getBody]
         progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            //请求成功
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                options:NSJSONReadingAllowFragments
-                                                                  error:nil];
             if (self.delegate) {
-                [self.delegate respSuc:dic andRespClass:cls];
+                [self.delegate respSuc:responseObject andRespClass:cls];
             }
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -164,13 +156,8 @@
     [manager PUT:requestUrl
        parameters:bodyDic
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             //请求成功
-             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                 options:NSJSONReadingAllowFragments
-                                                                   error:nil];
-             
              if (self.delegate) {
-                 [self.delegate respSuc:dic andRespClass:cls];
+                 [self.delegate respSuc:responseObject andRespClass:cls];
              }
              
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -190,19 +177,13 @@
     NSDictionary *bodyDic = [api getReqBody];
     Class cls = [api getRespClass];
     
-    
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     
     [manager DELETE:requestUrl
       parameters:bodyDic
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             //请求成功
-             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                 options:NSJSONReadingAllowFragments
-                                                                   error:nil];
-             
              if (self.delegate) {
-                 [self.delegate respSuc:dic andRespClass:cls];
+                 [self.delegate respSuc:responseObject andRespClass:cls];
              }
              
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -221,17 +202,16 @@
 #pragma mark - Version 1.0.5
 - (void)requestPOST:(AbsApi<ApiDelegate>*)api
 {
-    NSString *requestUrl = [api getReqUrl];
-    NSDictionary *bodyDic = [api getReqBody];
-    
     CentaResponse *reqResp = [self checkReqInterceptor:api];
     if(nil != reqResp){
         [self.ydelegate respFail:reqResp];
         return;
     }
     
-    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
+    NSString *requestUrl = [api getReqUrl];
+    NSDictionary *bodyDic = [api getReqBody];
     
+    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     [manager POST:requestUrl
        parameters:bodyDic
          progress:^(NSProgress * _Nonnull uploadProgress) {
@@ -247,17 +227,18 @@
 
 - (void)requestGET:(AbsApi<ApiDelegate>*)api
 {
-    NSString *requestUrl = [self getReqGetUrl:api];
-    
     CentaResponse *reqResp = [self checkReqInterceptor:api];
     if(nil != reqResp){
         [self.ydelegate respFail:reqResp];
         return;
     }
     
+    NSString *requestUrl = [api getReqUrl];
+//    NSString *requestUrl = [self getReqGetUrl:api];
+    
     AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     [manager GET:requestUrl
-      parameters:nil
+      parameters:[api getBody]
         progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -271,17 +252,16 @@
 
 - (void)requestPUT:(AbsApi<ApiDelegate>*)api
 {
-    NSString *requestUrl = [api getReqUrl];
-    NSDictionary *bodyDic = [api getReqBody];
-    
     CentaResponse *reqResp = [self checkReqInterceptor:api];
     if(nil != reqResp){
         [self.ydelegate respFail:reqResp];
         return;
     }
     
-    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
+    NSString *requestUrl = [api getReqUrl];
+    NSDictionary *bodyDic = [api getReqBody];
     
+    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     [manager PUT:requestUrl
       parameters:bodyDic
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -295,17 +275,16 @@
 
 - (void)requestDELETE:(AbsApi<ApiDelegate>*)api
 {
-    NSString *requestUrl = [api getReqUrl];
-    NSDictionary *bodyDic = [api getReqBody];
-    
     CentaResponse *reqResp = [self checkReqInterceptor:api];
     if(nil != reqResp){
         [self.ydelegate respFail:reqResp];
         return;
     }
     
-    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
+    NSString *requestUrl = [api getReqUrl];
+    NSDictionary *bodyDic = [api getReqBody];
     
+    AFHTTPSessionManager *manager = [self createAFHttpManagerForApi:api];
     [manager DELETE:requestUrl
          parameters:bodyDic
             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

@@ -18,11 +18,12 @@
 
 - (CentaResponse *)convertData:(id)task andRespData:(id)respData andApi:(AbsApi<ApiDelegate> *)api
 {
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:respData
-                                                        options:NSJSONReadingAllowFragments
-                                                          error:nil];
+//    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:respData
+//                                                        options:NSJSONReadingAllowFragments
+//                                                          error:nil];
+    
     CentaResponse *resp = [self createResponse];
-    resp.data = dic;
+    resp.data = respData;
     resp.api = (BaseApi *)api;
     
     NSURLSessionDataTask *urlTask = task;

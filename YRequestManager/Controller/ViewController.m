@@ -40,16 +40,16 @@
     api.pwd = @"pwd";
     
     RequestManager *reqManager = [RequestManager initManagerWithDelegate:self];
-    [reqManager sendRequest:api];
+//    [reqManager sendRequest:api];
     
-//    [reqManager sendRequest:api sucBlock:^(id result) {
-//        NSDictionary *dic = result;
-//        NSString *dicStr = [dic JSONString];
-//        NSLog(dicStr);
-//    } failBlock:^(NSError *error) {
-//        NSString *resultCode = [NSString stringWithFormat:@"@ld",error.code];
-//        NSLog(resultCode);
-//    }];
+    [reqManager sendRequest:api sucBlock:^(id result) {
+        NSDictionary *dic = result;
+        NSString *dicStr = [dic JsonString];
+        NSLog(dicStr);
+    } failBlock:^(NSError *error) {
+        NSString *resultCode = [NSString stringWithFormat:@"@ld",error.code];
+        NSLog(resultCode);
+    }];
 }
 
 - (void)requestVersion105

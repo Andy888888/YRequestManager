@@ -26,10 +26,10 @@ typedef void (^RespSucBlock)(CentaResponse *result);
 typedef void (^RespFailBlock)(CentaResponse *error);
 
 /// BaseServiceManager 用来使用AFNetWorking发送请求，只是个管理者，本身并不具备发送请求能力；
-/// @warning 设计此Manager主要目的是，后期不采用AFNetWorking时，可在本类的发送方法sendRequest...中切换其他第三方请求框架即可，而不需要项目中到处修改AFNetWorking请求为其他方式请求，同时担任着控制第三方请求的角色；因此，即使看不惯本类，也不要修改；另外，本类只拥有block回调方式请求
+/// @warning 设计此Manager主要目的是，后期不采用AFNetWorking时，可在本类的发送方法sendRequest...中切换其他第三方请求框架即可，而不需要项目中到处修改AFNetWorking请求为其他方式请求，同时担任着控制第三方请求的角色；因此，即使不习惯本类，也不要修改；另外，本类只拥有block回调方式请求
 /// @warning 请不要随便修改
 @interface BaseServiceManager : NSObject
-
+@property (nonatomic,strong) AFHTTPSessionManager *manager;
 + (id)initManager;
 
 /// 拦截器，里面规范了返回数据的正确与否
