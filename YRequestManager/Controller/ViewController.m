@@ -13,7 +13,7 @@
 #import "DataConvertInterceptor.h"
 #import "NSDictionary+Json.h"
 
-@interface ViewController ()<ResponseDelegate,YResponseDelegate>
+@interface ViewController ()<ResponseDelegate>
 
 @end
 
@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self test];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,9 +59,12 @@
     api.user = @"a n d y";
     api.pwd = @"pwd";
     
-    RequestManager *reqManager = [RequestManager defaultManager:self];
-    [reqManager setInterceptorForSuc:[DataConvertInterceptor new]];
-    [reqManager request:api];
+//    RequestManager *reqManager = [RequestManager defaultManager:self];
+//    [reqManager setInterceptorForSuc:[DataConvertInterceptor new]];
+//    [reqManager request:api];
+//
+    
+    
     
 //    [reqManager request:api sucBlock:^(CentaResponse *result) {
 //        if(result.suc){
@@ -103,6 +107,30 @@
 {
     NSString *resultCode = [NSString stringWithFormat:@"%ld",error.code];
     NSLog(resultCode);
+}
+
+
+
+- (void)test {
+    
+    // 验证 警告 崩溃
+    RequestManager *reqManager = [RequestManager initManagerWithDelegate:nil withNewVersion:YES];
+
+    //验证单例
+    BaseServiceManager *manager = [BaseServiceManager initManager];
+    
+    NSLog(@"%p",reqManager);
+    NSLog(@"%p",manager);
+    
+    
+
+    //验证方法过期
+//    [RequestManager test1];
+    
+    //验证方法不可用
+//    [RequestManager test2];
+    
+
 }
 
 
